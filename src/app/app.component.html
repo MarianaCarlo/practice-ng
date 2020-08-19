@@ -1,8 +1,13 @@
 <p>Mariana</p>
 
+<div style="background: lightBlue">
+  VOTOS <br>
+  DESHABILITADOS <br>
+  HABILITADOS
+</div>
 
 <div *ngFor="let alumno of alumnos">
-  <div *ngIf="!votante.voto" ngStyle]="{'background': alumno.habilitado ? 'orange' : 'blue'}">
+  <div *ngIf="!alumno.voto" [ngStyle]="{'background': alumno.habilitado ? 'orange' : 'blue'}">
     <app-prueba 
       [nombre]="alumno.nombre" 
       [apellido]="alumno.apellido" 

@@ -12,10 +12,15 @@ export class AppComponent implements OnInit {
   contador2:number = 0;
   contador3:number = 0;
 
+  name:string = 'mariana';
+  lastName:string = 'carlo';
+
   aux=5;
   auxColor='red';
   auxClass=true;
   sw=true;
+  auxNumber: number = 5;
+  auxExponent: number = 2;
 
   alumnos = [
     {
@@ -65,7 +70,7 @@ export class AppComponent implements OnInit {
       if(!persona.habilitado){
         this.k++;
       }
-      console.log(this.k);
+     // console.log(this.k);
     }
 
     
@@ -94,6 +99,7 @@ name: 'maria',
   }
 ]
 
+numbersArray = [1,2,3,4,5,6,7,8,9,10]
 
 ngOnInit() {
   this.alumnos.forEach(function (value){
@@ -112,6 +118,11 @@ ngOnInit() {
     
   })
   console.log('alumnos',this.alumnos[0]);
+  console.log(this.suma(2,1));
+}
+
+suma(a:number, b:number){
+  return 'funcion pura:' + (a+b);
 }
 
 saveClickChild(event) {

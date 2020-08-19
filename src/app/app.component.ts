@@ -36,8 +36,36 @@ export class AppComponent implements OnInit, OnDestroy {
       voto: false
     }
   ]
+  i = 0;
+  j = 0;
+  k = 0;
+  ngDoCheck(){
+    this.i=0;
+    for(let persona of this.alumnos){
+      if(persona.voto){
+        this.i++;
+      }
+      console.log(this.i);
+    }
 
-  
+    this.j=0;
+    for(let persona of this.alumnos){
+      if(persona.habilitado){
+        this.j++;
+      }
+      console.log(this.j);
+    }
+
+    this.k=0;
+    for(let persona of this.alumnos){
+      if(!persona.habilitado){
+        this.k++;
+      }
+      console.log(this.k);
+    }
+
+    
+  }
 
 
 ngOnInit() {

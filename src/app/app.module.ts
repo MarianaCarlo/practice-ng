@@ -9,6 +9,8 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { CambiaridiomaPipe } from './cambiaridioma.pipe';
 import { PersonaModule } from './modules/persona/persona.module';
 import { ProductoModule } from './modules/producto/producto.module';
+import { AdminModule } from './modules/admin/admin.module';
+import { UserModule } from './modules/user/user.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProductoModule } from './modules/producto/producto.module';
     BrowserModule, 
     FormsModule,
     PersonaModule,
-    ProductoModule
+    ProductoModule,
+    AdminModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

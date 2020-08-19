@@ -17,4 +17,18 @@
   <button (click)="alumno.voto = true">Votar</button>
   </div>
   -->
-  <app-tarea *ngIf=""></app-tarea>
+  <app-tarea *ngIf="sw" name="mariana"></app-tarea>
+  <button (click)="sw=false;">Change sw</button>
+
+
+<div *ngFor="let person of people">
+  <div [ngStyle]="{ 'background': person.enable ? 'yellow': 'red'}">
+  <persona 
+    [name]='person.name' 
+    [lastName]='person.lastName' 
+    [age]= 'person.age'
+    [enable]='person.enable'>
+  </persona>
+  </div>
+</div>
+ 

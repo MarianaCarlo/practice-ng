@@ -6,11 +6,15 @@ import { from, fromEvent } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   title = 'curso-angular';
   contador1:number = 0;
   contador2:number = 0;
   contador3:number = 0;
+
+  aux=5;
+  auxColor='red';
+  auxClass=true;
   sw=true;
 
   alumnos = [
@@ -45,7 +49,7 @@ export class AppComponent implements OnInit, OnDestroy {
       if(persona.voto){
         this.i++;
       }
-      console.log(this.i);
+      //console.log(this.i);
     }
 
     this.j=0;
@@ -53,7 +57,7 @@ export class AppComponent implements OnInit, OnDestroy {
       if(persona.habilitado){
         this.j++;
       }
-      console.log(this.j);
+      //console.log(this.j);
     }
 
     this.k=0;
@@ -66,6 +70,29 @@ export class AppComponent implements OnInit, OnDestroy {
 
     
   }
+
+persons = ['maria','antonio','migel', 'lupe'];
+
+people = [
+  {
+  name: 'juan',
+  lastName: 'gutierrez',
+  age: 40,
+  enable: true,
+  },
+  {
+name: 'maria',
+  lastName: 'gutierrez',
+  age: 40,
+  enable: true,
+  },
+  {
+    name: 'antionio',
+  lastName: 'gutierrez',
+  age: 40,
+  enable: false,
+  }
+]
 
 
 ngOnInit() {
@@ -95,9 +122,6 @@ saveClickChild2(event) {
   console.log('EVENT CHILD: ', event)
 }
 
-ngOnDestroy(){
-
-}
 
 }
 

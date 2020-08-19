@@ -40,6 +40,6 @@ export class TareaComponent implements OnInit, OnChanges, DoCheck, AfterContentI
     console.log("ngAfterViewChecked");
   }
   ngOnDestroy() {
-    
+    console.log("ngOnDestroy");
   }
 }

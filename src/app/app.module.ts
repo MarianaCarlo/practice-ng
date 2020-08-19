@@ -16,6 +16,7 @@ import { PurePipe } from './pipes/pure.pipe';
 import { ImpurePipe } from './pipes/impure.pipe';
 import { NgColorDirective } from './directives/ng-color.directive';
 import { TestComponent } from './components/test/test.component';
+import { NgFocusDirective } from './directives/ng-focus.directive';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { TestComponent } from './components/test/test.component';
     SquarePipe,
     PurePipe,
     ImpurePipe,
-    NgColorDirective
+    NgColorDirective,
+    NgFocusDirective
   ],
   imports: [
     BrowserModule, 

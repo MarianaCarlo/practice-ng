@@ -1,1 +1,13 @@
 <p>Mariana</p>
+
+
+<div *ngFor="let alumno of alumnos">
+  <div *ngIf="!votante.voto" ngStyle]="{'background': alumno.habilitado ? 'orange' : 'blue'}">
+    <app-prueba 
+      [nombre]="alumno.nombre" 
+      [apellido]="alumno.apellido" 
+      [habilitado]="alumno.habilitado" 
+      [nacimiento]="alumno.nacimiento">
+  </app-prueba>
+  <button (click)="alumno.voto = true">Votar</button>
+  </div>

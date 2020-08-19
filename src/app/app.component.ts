@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { from, fromEvent } from 'rxjs';
 
 @Component({
@@ -6,18 +6,50 @@ import { from, fromEvent } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'curso-angular';
 
+  sw=true;
+
+  alumnos = [
+    {
+      nombre: 'juan',
+      apellido: 'gutierrez',
+      habilitado: true,
+      nacimiento: '18/08/95',
+      voto: false
+    },
+    {
+      nombre: 'juan',
+      apellido: 'gutierrez',
+      habilitado: false,
+      nacimiento: '18/08/95',
+      voto: false
+    },
+    {
+      nombre: 'juan',
+      apellido: 'gutierrez',
+      habilitado: false,
+      nacimiento: '18/08/95',
+      voto: false
+    }
+  ]
+
+
 ngOnInit() {
-  //observable
-  const youtube = from([1,2,3,4,5,6]);
-  youtube.subscribe(s => console.log('item: ', s));
+  
+}
 
+saveClickChild(event) {
+  console.log('EVENT CHILD: ', event)
+}
 
-  const aux = fromEvent(document, 'mousemove');
+saveClickChild2(event) {
+  console.log('EVENT CHILD: ', event)
+}
 
-  aux.subscribe(s => console.log('event: ', s.clientX + ' ' + s.clientY));
+ngOnDestroy(){
+
 }
 
 }

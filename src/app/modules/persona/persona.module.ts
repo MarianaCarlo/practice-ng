@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PersonaComponent } from './componenta/persona/persona.component';
 
+
 @NgModule({
   imports: [
     CommonModule
@@ -9,8 +10,9 @@ import { PersonaComponent } from './componenta/persona/persona.component';
   declarations: [
     PersonaComponent
   ],
-  exports: {
+  exports: [
     PersonaComponent
-  }
+  ]
+    
 })
 export class PersonaModule { }

@@ -100,9 +100,21 @@ name: 'maria',
 ]
 
 numbersArray = [1,2,3,4,5,6,7,8,9,10]
+const data123 = {
+      "gender": "female",
+      "name": {
+        "title": "miss",
+        "first": "mia",
+        "last": "sutton"
+      }
+    }
+}
+//const { results: [{ name: { title, first, last } }] } = this.data;
+//const { gender, name } = data123;
 
 ngOnInit() {
-  this.alumnos.forEach(function (value){
+  
+  /*this.alumnos.forEach(function (value){
     if(value.voto) {
       this.contador1++;
       console.log('contador 1: ',this.contador1);
@@ -116,9 +128,12 @@ ngOnInit() {
       //console.log('contador 3: ',this.contador3);
     }
     
-  })
-  console.log('alumnos',this.alumnos[0]);
-  console.log(this.suma(2,1));
+  })*/
+
+  
+
+  //console.log('alumnos',this.alumnos[0]);
+  //console.log(this.suma(2,1));
 }
 
 suma(a:number, b:number){

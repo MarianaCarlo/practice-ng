@@ -7,7 +7,8 @@ import { TareaComponent } from './tarea/tarea.component';
 import { FormsModule } from '@angular/forms';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { CambiaridiomaPipe } from './cambiaridioma.pipe';
-import { PersonaComponent } from './components/persona/persona.component';
+import { PersonaModule } from './modules/persona/persona.module';
+import { ProductoModule } from './modules/producto/producto.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import { PersonaComponent } from './components/persona/persona.component';
     TestComponent,
     TareaComponent,
     PruebaComponent,
-    CambiaridiomaPipe,
-    PersonaComponent
+    CambiaridiomaPipe
   ],
   imports: [
     BrowserModule, 
-    FormsModule
+    FormsModule,
+    PersonaModule,
+    ProductoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

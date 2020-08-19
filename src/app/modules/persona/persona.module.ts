@@ -8,7 +8,7 @@ import { PersonaComponent } from './componenta/persona/persona.component';
     CommonModule
   ],
   declarations: [
-    PersonaComponent
+    PersonaComponent,
   ],
   exports: [
     PersonaComponent

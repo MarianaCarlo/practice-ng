@@ -132,7 +132,9 @@ saveClickChild(event) {
 saveClickChild2(event) {
   console.log('EVENT CHILD: ', event)
 }
-
+saved(event){
+  console.log('cambios: ', event)
+}
 
 }
 

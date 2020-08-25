@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { NgColorDirective } from './directives/ng-color.directive';
 import { NgFocusDirective } from './directives/ng-focus.directive';
 import { HomeComponent } from './components/home/home.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     NgColorDirective,
     NgFocusDirective,
-    HomeComponent
+    HomeComponent,
+    AdminComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule, 

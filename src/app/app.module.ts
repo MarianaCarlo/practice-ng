@@ -11,6 +11,8 @@ import { NgModule } from '@angular/core';
 import { HomeModule } from './pages/home/home.module';
 import { AdminModule } from './pages/admin/admin.module';
 import { ListModule } from './pages/list/list.module';
+import { LoginModule } from './login/login.module';
+import { Pages1Module } from './pages1/pages1.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ListModule } from './pages/list/list.module';
     MatSliderModule,
     MatIconModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Pages1Module
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 import { NgModule } from '@angular/core';
+import { HomeModule } from './pages/home/home.module';
+import { AdminModule } from './pages/admin/admin.module';
+import { ListModule } from './pages/list/list.module';
 
 @NgModule({
   declarations: [

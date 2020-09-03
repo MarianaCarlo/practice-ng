@@ -27,7 +27,9 @@ import { Pages1Module } from './pages1/pages1.module';
     AppRoutingModule,
     Pages1Module
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

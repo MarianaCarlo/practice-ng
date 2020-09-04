@@ -11,6 +11,9 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { LoginModule } from './login/login.module';
 import { Pages1Module } from './pages1/pages1.module';
+import { PagesTicketModule } from './pages-ticket/pages-ticket.module';
+import { HometicketModule } from './pages-ticket/hometicket/hometicket.module';
+import { AdminticketModule } from './pages-ticket/adminticket/adminticket.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { Pages1Module } from './pages1/pages1.module';
     MatIconModule,
     FormsModule,
     AppRoutingModule,
-    Pages1Module
+    Pages1Module,
+    PagesTicketModule,
+    HometicketModule,
+    AdminticketModule
   ],
   providers: [
 

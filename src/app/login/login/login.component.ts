@@ -27,4 +27,9 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/pages1']);
   }
 
+  goTicket(): void {
+    // console.log('FORM: ', form.value);
+    this.router.navigate(['/pagesTicket']);
+  }
+
 }

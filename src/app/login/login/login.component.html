@@ -1,6 +1,13 @@
 <p>login works!</p>
 
-<button routerLink="/pages1">LOGIN</button>
+<div style="display: flex; flex-direction: column;">
+  <form (ngSubmit)="enviar2(form)"  #form="ngForm">
+    Username:<input type="text" name="username" ngModel><br>
+    Password: <input type="password" name="password" ngModel>
+    <button type="submit">LOGIN</button>
+  </form>
+</div>
+
 
 
 <button (click)="sw =!sw">SWTICH</button>

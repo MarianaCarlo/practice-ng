@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgElseDirective } from '../directives/ng-else.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +13,7 @@ import { LoginComponent } from './login/login.component';
     NgElseDirective
   ],
   imports: [
+    FormsModule,
     CommonModule,
     LoginRoutingModule
   ]

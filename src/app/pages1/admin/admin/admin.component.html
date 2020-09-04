@@ -3,6 +3,20 @@
 <div style="display: flex; flex-direction: column;">
   <form [formGroup]="productForm">
     <input formControlName="description" type="text"><br>
+
+    <div *ngIf="productForm.get('description').invalid && (productForm.get('description').touched || productForm.get('description').dirty)" class="alert alert-danger">
+
+      <div *ngIf="productForm.get('description').errors.required">
+        this field is required
+      </div>
+      <div *ngIf="productForm.get('description').errors.minlength">
+        Must be 3 characters
+      </div>
+      <div *ngIf="productForm.get('description').errors.maxlength">
+        at least 5 characters
+      </div>
+    </div>
+
     <input formControlName="imageURL" type="text"><br>
     <input formControlName="ownerId" type="text"><br>
     <input formControlName="price" type="text"><br>

@@ -1,14 +1,24 @@
 <p>login works!</p>
 
-<div style="display: flex; flex-direction: column;">
+<!-- <div style="display: flex; flex-direction: column;">
   <form (ngSubmit)="enviar2(form)"  #form="ngForm">
     Username:<input type="text" name="username" ngModel><br>
     Password: <input type="password" name="password" ngModel>
     <button type="submit">LOGIN</button>
   </form>
+</div> -->
+
+
+<input class="form-control" type="text" minlength="3" maxlength="5" required #name="ngModel" ngModel>
+<div *ngIf="name.invalid && (name.touched || name.dirty)" class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    this field is required
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Must be 3 characters
+  </div>
+  <div *ngIf="name.errors.maxlength">
+    at least 5 characters
+  </div>
 </div>
-
-
-
-<button (click)="sw =!sw">SWTICH</button>
-<p *ngElse="sw">SE MUESTRA SI ES FALSO</p>

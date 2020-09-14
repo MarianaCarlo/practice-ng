@@ -1,3 +1,5 @@
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,10 +33,15 @@ import { AdminticketModule } from './pages-ticket/adminticket/adminticket.module
     Pages1Module,
     PagesTicketModule,
     HometicketModule,
-    AdminticketModule
+    AdminticketModule,
+    HttpClientModule
   ],
   providers: [
-
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

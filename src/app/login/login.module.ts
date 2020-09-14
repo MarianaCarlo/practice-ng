@@ -29,7 +29,6 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     MatInputModule,
     LoginRoutingModule,
-    HttpClientModule
   ],
   providers: [
     AuthService

@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,28 +9,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username = '';
-  password = '';
-
-  sw = true;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  enviar(): void{
-    console.log('USERNAME: ', this.username);
-    console.log('PASSWORD: ', this.password);
-  }
-
-  enviar2(form): void {
+  onLogin(form: any): void {
     console.log('FORM: ', form.value);
-    this.router.navigate(['/pages1']);
-  }
 
-  goTicket(): void {
-    // console.log('FORM: ', form.value);
-    this.router.navigate(['/pagesTicket']);
+    this.authService.login(form.value).subscribe(
+      res => {
+        console.log('LOGIN RESPONSE: ', res);
+      },
+      err => {
+        console.log('ERROR DE SERVIDOR');
+      }
+    );
   }
 
 }

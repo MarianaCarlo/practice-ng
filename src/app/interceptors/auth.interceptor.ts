@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor
-} from '@angular/common/http';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -20,18 +15,9 @@ export class AuthInterceptor implements HttpInterceptor {
 
     if (token) {
       request = request.clone({
-        url: `${request.url}`
+        url: `${request.url}?auth=${token}`
       });
     }
-
-    // para modificar la autenticación
-    // if (token) {
-    //   request = request.clone({
-    //     setHeaders: {
-    //       Authorization: 'Bearer ' + token
-    //     }
-    //   });
-    // }
 
     return next.handle(request);
   }

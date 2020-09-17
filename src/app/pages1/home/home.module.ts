@@ -1,3 +1,7 @@
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { ProductService } from './../../services/product.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,6 +18,10 @@ import { MatButtonModule } from '@angular/material/button';
     HomeRoutingModule,
     MatCardModule,
     MatButtonModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     ProductService

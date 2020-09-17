@@ -1,5 +1,4 @@
 import { AuthService } from './../services/auth.service';
-import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
@@ -31,7 +30,7 @@ import { LoginComponent } from './login/login.component';
     LoginRoutingModule,
   ],
   providers: [
-    AuthService
+
   ]
 })
 export class LoginModule { }

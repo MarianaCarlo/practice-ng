@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { ProductService } from './../../../services/product.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -18,7 +19,7 @@ export class AdminComponent implements OnInit, OnDestroy {
   productDeleteSubs: Subscription;
   productUpdateSubs: Subscription;
   idEdit: any;
-  constructor(private formBuilder: FormBuilder, private productService: ProductService) {
+  constructor(private formBuilder: FormBuilder, private productService: ProductService, private authService: AuthService) {
    }
 
   ngOnInit(): void {
@@ -34,7 +35,10 @@ export class AdminComponent implements OnInit, OnDestroy {
 
   onEnviar123(): void {
     console.log('form group: ', this.productForm.value);
-    this.productSubs = this.productService.addProducts(this.productForm.value).subscribe(
+    this.productSubs = this.productService.addProducts({
+      ...this.productForm.value,
+      ownerId: this.authService.getUserId()
+    }).subscribe(
       res => {
         console.log('resp ', res);
       },
@@ -46,7 +50,8 @@ export class AdminComponent implements OnInit, OnDestroy {
 
   loadProducts(): void {
     this.products = [];
-    this.productGetSubs = this.productService.getProducts().subscribe( res => {
+    const userId =  this.authService.getUserId();
+    this.productGetSubs = this.productService.getProductsById(userId).subscribe( res => {
       // console.log('RESPUESTA: ', Object.entries(res));
       Object.entries(res).map((p: any) => this.products.push({id: p[0],  ...p[1]}));
     });
@@ -71,7 +76,10 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   onUpdateProduct(): void {
-    this.productUpdateSubs = this.productService.updateProducts(this.idEdit, this.productForm.value).subscribe(
+    this.productUpdateSubs = this.productService.updateProducts(this.idEdit, {
+      ...this.productForm.value,
+      ownerId: this.authService.getUserId()
+    }).subscribe(
       res => {
         console.log(res);
         this.loadProducts();
